@@ -1,0 +1,220 @@
+let SessionLoad = 1
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let v:this_session=expand("<sfile>:p")
+silent only
+cd ~/Downloads/herpderp/code
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+badd +1 ~/Downloads/herpderp/code
+badd +0 new_project/Zoltar.ino
+badd +0 old_project/old_project.ino
+badd +0 new_project/headers/config.h
+badd +0 new_project/headers/game.h
+badd +0 new_project/headers/lights.h
+badd +0 new_project/headers/scanner.h
+badd +0 new_project/headers/sound.h
+argglobal
+silent! argdel *
+edit old_project/old_project.ino
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+wincmd _ | wincmd |
+vsplit
+wincmd _ | wincmd |
+vsplit
+3wincmd h
+wincmd w
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+wincmd w
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+wincmd w
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winminwidth=1 winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 50 + 101) / 202)
+exe '2resize ' . ((&lines * 9 + 23) / 46)
+exe 'vert 2resize ' . ((&columns * 50 + 101) / 202)
+exe '3resize ' . ((&lines * 33 + 23) / 46)
+exe 'vert 3resize ' . ((&columns * 50 + 101) / 202)
+exe '4resize ' . ((&lines * 21 + 23) / 46)
+exe 'vert 4resize ' . ((&columns * 50 + 101) / 202)
+exe '5resize ' . ((&lines * 21 + 23) / 46)
+exe 'vert 5resize ' . ((&columns * 50 + 101) / 202)
+exe '6resize ' . ((&lines * 21 + 23) / 46)
+exe 'vert 6resize ' . ((&columns * 49 + 101) / 202)
+exe '7resize ' . ((&lines * 21 + 23) / 46)
+exe 'vert 7resize ' . ((&columns * 49 + 101) / 202)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 52 - ((39 * winheight(0) + 21) / 43)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+52
+normal! 0
+lcd ~/Downloads/herpderp/code
+wincmd w
+argglobal
+edit ~/Downloads/herpderp/code/new_project/Zoltar.ino
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 4) / 9)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+lcd ~/Downloads/herpderp/code
+wincmd w
+argglobal
+edit ~/Downloads/herpderp/code/new_project/headers/config.h
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 25 - ((24 * winheight(0) + 16) / 33)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+25
+normal! 0
+lcd ~/Downloads/herpderp/code
+wincmd w
+argglobal
+edit ~/Downloads/herpderp/code/new_project/headers/game.h
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 57 - ((14 * winheight(0) + 10) / 21)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+57
+normal! 0
+lcd ~/Downloads/herpderp/code
+wincmd w
+argglobal
+edit ~/Downloads/herpderp/code/new_project/headers/lights.h
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 10) / 21)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+lcd ~/Downloads/herpderp/code
+wincmd w
+argglobal
+edit ~/Downloads/herpderp/code/new_project/headers/scanner.h
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 10) / 21)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+lcd ~/Downloads/herpderp/code
+wincmd w
+argglobal
+edit ~/Downloads/herpderp/code/new_project/headers/sound.h
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 10) / 21)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+lcd ~/Downloads/herpderp/code
+wincmd w
+7wincmd w
+exe 'vert 1resize ' . ((&columns * 50 + 101) / 202)
+exe '2resize ' . ((&lines * 9 + 23) / 46)
+exe 'vert 2resize ' . ((&columns * 50 + 101) / 202)
+exe '3resize ' . ((&lines * 33 + 23) / 46)
+exe 'vert 3resize ' . ((&columns * 50 + 101) / 202)
+exe '4resize ' . ((&lines * 21 + 23) / 46)
+exe 'vert 4resize ' . ((&columns * 50 + 101) / 202)
+exe '5resize ' . ((&lines * 21 + 23) / 46)
+exe 'vert 5resize ' . ((&columns * 50 + 101) / 202)
+exe '6resize ' . ((&lines * 21 + 23) / 46)
+exe 'vert 6resize ' . ((&columns * 49 + 101) / 202)
+exe '7resize ' . ((&lines * 21 + 23) / 46)
+exe 'vert 7resize ' . ((&columns * 49 + 101) / 202)
+tabnext 1
+if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 winminheight=1 winminwidth=1 shortmess=filnxtToO
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if file_readable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :
